@@ -42,3 +42,7 @@ Output of Client:
 ```
 'Handshake' Hi! I'm Server!
 ```
+
+Dependencies:
+  - socket module
+  - time module

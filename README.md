@@ -43,6 +43,12 @@ Output of Client:
 'Handshake' Hi! I'm Server!
 ```
 
+To get connected client IP and Port use:
+
+```
+SSocket.connected
+```
+
 Dependencies:
   - socket module
   - time module

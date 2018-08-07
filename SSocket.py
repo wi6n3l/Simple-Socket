@@ -21,9 +21,9 @@ def Server_wait(numofclientwait, port):
 
 def Server_accept():
 
-    global s
-
+    global s, connected
     s = s2.accept()[0]
+    connected = s.getpeername()
 
 def Write(D):
     a = D + "\r"

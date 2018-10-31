@@ -11,9 +11,9 @@ SSocket.Server_wait(connections, port)
 
 SSocket.Server_accept()
 
-print(SSocket.Read())
+print(SSocket.Read(1024, "ascii"))
 
-SSocket.Write("'Handshake' Hi! I'm Server!")
+SSocket.Write("'Handshake' Hi! I'm Server!", "ascii")
 
 SSocket.Close()
 ```
@@ -25,9 +25,9 @@ import SSocket
 
 SSocket.Connect(ip, port)
 
-SSocket.Write("'Handshake' Hi! I'm Client!")
+SSocket.Write("'Handshake' Hi! I'm Client!", "ascii")
 
-print(SSocket.Read())
+print(SSocket.Read(1024, "ascii"))
 
 SSocket.Close()
 ```

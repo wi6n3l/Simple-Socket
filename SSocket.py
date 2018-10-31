@@ -3,12 +3,12 @@ import time
 
 rv = True
 
-def Connect(HostIp, Port):
+def Connect(hostip, Port):
     global s
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    s.connect((HostIp, Port))
+    s.connect((hostip, Port))
 
 def Server_wait(numofclientwait, port):
     global s2
@@ -25,19 +25,19 @@ def Server_accept():
     s = s2.accept()[0]
     connected = s.getpeername()
 
-def Write(D):
-    a = D + "\r"
-    s.send(a.encode("ascii"))
+def Write(content, encode):
+    a = content + "\r"
+    s.send(a.encode(encode))
     return
     time.sleep(0.1)
 
-def Read():
+def Read(bytes, encode):
     global rv
     b = ""
 
     while rv:
-        a = s.recv(1024)
-        a = a.decode("ascii")
+        a = s.recv(bytes)
+        a = a.decode(encode)
 
         b = b + a
         return b
